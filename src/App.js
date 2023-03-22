@@ -5,6 +5,7 @@ import GigDetails from "./screens/GigDetails";
 import Profile from "./screens/Profile";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
+import './styles.css'
 
 const App = () => {
   return (

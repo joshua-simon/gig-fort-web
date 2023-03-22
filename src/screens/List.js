@@ -4,7 +4,7 @@ import GigsToday from "../components/GigsToday";
 const List = () => {
 
     return ( 
-        <div>
+        <div className="listContainer">
             <GigsToday/>
         </div>
      );

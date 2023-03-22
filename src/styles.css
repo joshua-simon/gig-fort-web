@@ -1,0 +1,54 @@
+@font-face {
+    font-family: Lato;
+    src: url("../assets/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-family: NunitoSans;
+    src: url("../assets/NunitoSans-Bold.ttf");
+}
+
+/* Gig Card */
+
+.gigCardContainer {
+    display:flex;
+    flex-direction: column;
+    width:369px;
+    height:178px;
+}
+
+.gigCard_imageAndBlurb {
+    display: flex;
+    flex-direction: row;
+}
+
+.gigCard_imageAndBlurb img {
+    width:100px;
+    height:85.63px
+}
+
+.gigCard_imageAndBlurb p {
+    font-family: Lato
+}
+
+.gigCard_header h2 {
+    font-family: NunitoSans
+}
+
+.gigCard_header p {
+    font-family: Lato
+}
+
+.gigCard_header_sub {
+    display:flex;
+    flex-direction:row
+}
+
+
+/* List */
+
+.listContainer {
+    display:flex;
+    justify-content: center;
+}
+
