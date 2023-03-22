@@ -1,6 +1,12 @@
+import { useGigs } from "../hooks/useGigs";
+import GigsToday from "../components/GigsToday";
+
 const List = () => {
+
     return ( 
-        <div>List</div>
+        <div>
+            <GigsToday/>
+        </div>
      );
 }
  
