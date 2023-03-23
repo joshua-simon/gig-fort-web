@@ -1,11 +1,26 @@
+import { useState } from "react";
 import { useGigs } from "../hooks/useGigs";
 import GigsToday from "../components/GigsToday";
+import GigsByWeek from "../components/GigsByWeek";
 import { format } from "date-fns";
 
 const List = () => {
+  const [ showWeek,setShowWeek ] = useState(false)
   const currentDateMs = Date.now();
   const formattedDay = format(new Date(currentDateMs), "EEEE");
   const formattedWeek = format(new Date(currentDateMs), "LLLL do Y");
+
+ const gigsToRender = showWeek ? (
+    <GigsByWeek/>
+ ) : (
+    <GigsToday/>
+ )
+
+
+ const buttonStyle = {backgroundColor:'#F6F6F5',color:'#377D8A'}
+
+
+
 
   return (
     <div className="list">
@@ -14,11 +29,11 @@ const List = () => {
         <p className="gigsToday_date_week">{formattedWeek}</p>
       </div>
       <div className="listButtons">
-        <button>Gigs Today</button>
-        <button>Gigs This Week</button>
+        <button onClick={() => setShowWeek(false)} style = {showWeek ? buttonStyle : null}>Gigs Today</button>
+        <button onClick={() => setShowWeek(true)} style = {showWeek ? null : buttonStyle}>Gigs This Week</button>
       </div>
       <div className="listContainer">
-        <GigsToday />
+        {gigsToRender}
       </div>
     </div>
   );
