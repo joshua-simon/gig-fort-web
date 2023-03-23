@@ -16,11 +16,7 @@ const List = () => {
     <GigsToday/>
  )
 
-
  const buttonStyle = {backgroundColor:'#F6F6F5',color:'#377D8A'}
-
-
-
 
   return (
     <div className="list">
