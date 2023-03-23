@@ -8,13 +8,24 @@
     src: url("../assets/NunitoSans-Bold.ttf");
 }
 
+body {
+    background-color: #F6F6F5;
+}
+
 /* Gig Card */
 
+/* width300 */
 .gigCardContainer {
     display:flex;
     flex-direction: column;
-    width:369px;
-    height:178px;
+    width:80%;
+    height:auto;
+    background-color:#FAF7F2;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding:2%;
+    margin:0 auto;
+    margin-bottom:5%;
 }
 
 .gigCard_imageAndBlurb {
@@ -24,24 +35,33 @@
 
 .gigCard_imageAndBlurb img {
     width:100px;
-    height:85.63px
+    height:85.63px;
+    border-radius: 8px;
+    margin-right: 2%;
 }
 
 .gigCard_imageAndBlurb p {
     font-family: Lato
 }
 
-.gigCard_header h2 {
+.gigCard_header h3 {
     font-family: NunitoSans
 }
 
-.gigCard_header p {
+.gigCard_header h5 {
     font-family: Lato
 }
 
 .gigCard_header_sub {
     display:flex;
-    flex-direction:row
+    flex-direction:row;
+    margin-bottom: 5%;
+}
+
+.seeMore {
+    text-align: right;
+    font-family: Lato;
+    color:#377D8A
 }
 
 
