@@ -14,7 +14,6 @@ body {
 
 /* Gig Card */
 
-/* width300 */
 .gigCardContainer {
     display:flex;
     flex-direction: column;
@@ -70,5 +69,24 @@ body {
 .listContainer {
     display:flex;
     justify-content: center;
+}
+
+.listButtons {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.listButtons button {
+    background-color: #377D8A;
+    color:#FFFFFF;
+    border-radius: 8px;
+    font-family: NunitoSans;
+    border:none;
+    width:116px;
+    height:37px;
+    font-weight:700;
+    font-size:14px;
+    margin:10%
 }
 
