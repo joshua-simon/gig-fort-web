@@ -16,14 +16,21 @@ const List = () => {
     <GigsToday/>
  )
 
+ const date = !showWeek ? (
+   <div className="gigsToday_date">
+     <p className="gigsToday_date_day">{formattedDay}</p>
+     <p className="gigsToday_date_week">{formattedWeek}</p>
+   </div>
+ ) : (
+  <div className="gigsToday_date">
+</div>
+ )
+
  const buttonStyle = {backgroundColor:'#F6F6F5',color:'#377D8A'}
 
   return (
     <div className="list">
-      <div className="gigsToday_date">
-        <p className="gigsToday_date_day">{formattedDay}</p>
-        <p className="gigsToday_date_week">{formattedWeek}</p>
-      </div>
+      {date}
       <div className="listButtons">
         <button onClick={() => setShowWeek(false)} style = {showWeek ? buttonStyle : null}>Gigs Today</button>
         <button onClick={() => setShowWeek(true)} style = {showWeek ? null : buttonStyle}>Gigs This Week</button>

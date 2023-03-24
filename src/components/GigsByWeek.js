@@ -1,5 +1,6 @@
 import { getGigsThisWeek } from "../util/helperFunctions";
 import { useGigs } from "../hooks/useGigs";
+import GigCard from "./GigCard";
 
 
 const GigsByWeek = () => {
@@ -16,10 +17,19 @@ const GigsByWeek = () => {
           const week = date.slice(4,18)
            return (
             <div>
-                <h2>{day}</h2>
+               <div className="gigsThisWeek_date">
+                  <p className="gigsThisWeek_date_day">{day}</p>
+                  <p className="gigsThisWeek_date_week">{week}</p>
+               </div>
                 {gigs.map(gig => {
                    return (
-                    <div>{gig.gigName}</div>
+                    <GigCard
+                     venue = {gig.venue}
+                     blurb = {gig.blurb}
+                     image = {gig.image}
+                     gigName = {gig.gigName}
+                     genre = {gig.genre}
+                    />
                    ) 
                 })}
             </div>
