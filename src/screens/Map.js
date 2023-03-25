@@ -4,6 +4,11 @@ import { mapStyle } from "../util/mapStyle";
 import logo from "../assets/logo.png";
 import { getGigsToday } from "../util/helperFunctions";
 import { useGigs } from "../hooks/useGigs";
+import mapPin from "../assets/map-pin-new.png"
+import { Link } from "react-router-dom";
+import { format } from "date-fns";
+import { AiFillCaretLeft } from 'react-icons/ai'
+import { AiFillCaretRight } from 'react-icons/ai'
 
 const Map = () => {
   const { isLoaded } = useJsApiLoader({
@@ -15,18 +20,21 @@ const Map = () => {
   const currentDateMs = Date.now()
   const gigsToday = getGigsToday(gigs,currentDateMs)
 
-  console.log(gigsToday)
-
   const center = {
     lat: -41.294,
     lng: 174.777,
   };
+
+  const formattedDay = format(new Date(currentDateMs), "EEEE");
+  const formattedWeek = format(new Date(currentDateMs), "LLLL do Y");
 
   const containerStyle = {
     width: "373px",
     height: "410px",
     borderRadius: "26px",
   };
+
+
 
   const map = isLoaded ? (
     <div className="map-container">
@@ -41,8 +49,11 @@ const Map = () => {
             const lng = gig.location.longitude
             const location = {lat:lat,lng:lng}
             return (
-                <Marker
+            <Marker
                 position = {location}
+                icon = {{
+                    url: mapPin,
+                }}
             ></Marker>
             )
         })}
@@ -54,10 +65,41 @@ const Map = () => {
 
   return (
     <div className="map">
+
       <div className="logo">
         <img src={logo} />
       </div>
+
+      <div className="gigsToday_map">
+        <p className="gigsToday_date_day">{formattedDay}</p>
+        <p className="gigsToday_date_week">{formattedWeek}</p>
+      </div>
+
+      <div className="map_text">
+        <p>Tap on the <img className="map_text_pin" src = {mapPin}/> icons on the map to see more gig info</p>
+      </div>
+      
       {map}
+
+
+      <div className="arrows">
+        <div className="arrow_left">
+          <AiFillCaretLeft size={48} />
+          <p>Previous Day</p>
+        </div>
+        <div className="arrow_right">
+          <AiFillCaretRight size={48}/>
+          <p>Next Day</p>
+        </div>
+      </div>
+
+      <div className="buttons">
+        <Link to='/list'>
+          <button>List</button>
+        </Link>
+        <button>Free Events</button>
+      </div>
+
     </div>
   );
 };
