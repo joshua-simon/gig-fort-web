@@ -4,10 +4,12 @@ import { mapStyle } from "../util/mapStyle";
 import logo from "../assets/test2.png";
 import { useGigs } from "../hooks/useGigs";
 import mapPin from "../assets/map-pin-new.png";
-import { Link } from "react-router-dom";
+import mapPin50pc from "../assets/map-pin-50pc.png"
+import { Link,useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { AiFillCaretLeft } from "react-icons/ai";
 import { AiFillCaretRight } from "react-icons/ai";
+
 
 const Map = () => {
   const [selectedDateMs, setSelectedDateMs] = useState(Date.now());
@@ -17,6 +19,8 @@ const Map = () => {
     googleMapsApiKey: "AIzaSyDsI5Nfl4xBcf9qsmtQAFzUkqMMmBC9WCw",
   });
 
+
+  const navigate = useNavigate()
 
   const gigs = useGigs();
 
@@ -60,12 +64,32 @@ const Map = () => {
   const gigsToDisplay = isFree ? freeGigsToday : gigsToday
 
 
+  const selectedStyle = {
+    backgroundColor: "#F6F6F5",
+    color:"#377D8A",
+    borderRadius: "8px",
+    fontfamily: "NunitoSans",
+    border:"none",
+    width:"116px",
+    height:"37px",
+    fontWeight:"700",
+    fontSize:"14px",
+  }
+
+  let selectedButtonStyle
+  !isFree ? selectedButtonStyle = selectedStyle : selectedButtonStyle = null
+
+
   const containerStyle = {
     width: "90%",
     height: "450px",
     borderRadius: "26px",
     margin: "0 auto",
   };
+
+  const onMarkerClick = (id) => {
+    navigate(`/gigDetails/${id}`)
+  }
 
   const map = isLoaded ? (
     <div className="map-container">
@@ -83,8 +107,9 @@ const Map = () => {
             <Marker
               position={location}
               icon={{
-                url: mapPin,
+                url: mapPin50pc,
               }}
+              onClick = {() => onMarkerClick(gig.id)}
             ></Marker>
           );
         })}
@@ -129,7 +154,7 @@ const Map = () => {
         <Link to="/list">
           <button>List</button>
         </Link>
-        <button onClick = {() => setIsFree((currentState) => !currentState)}>Free Events</button>
+        <button onClick = {() => setIsFree((currentState) => !currentState)} style ={selectedButtonStyle}>Free Events</button>
       </div>
     </div>
   );

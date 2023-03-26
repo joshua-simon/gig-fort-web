@@ -1,6 +1,7 @@
 import { getGigsThisWeek } from "../util/helperFunctions";
 import { useGigs } from "../hooks/useGigs";
 import GigCard from "./GigCard";
+import { Link } from "react-router-dom";
 
 
 const GigsByWeek = () => {
@@ -23,13 +24,15 @@ const GigsByWeek = () => {
                </div>
                 {gigs.map(gig => {
                    return (
-                    <GigCard
-                     venue = {gig.venue}
-                     blurb = {gig.blurb}
-                     image = {gig.image}
-                     gigName = {gig.gigName}
-                     genre = {gig.genre}
-                    />
+                     <Link to = {`/gigDetails/${gig.id}`}>
+                        <GigCard
+                           venue = {gig.venue}
+                           blurb = {gig.blurb}
+                           image = {gig.image}
+                           gigName = {gig.gigName}
+                           genre = {gig.genre}
+                        />
+                     </Link>
                    ) 
                 })}
             </div>

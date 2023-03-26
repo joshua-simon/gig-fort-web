@@ -1,6 +1,7 @@
 import { getGigsToday } from "../util/helperFunctions";
 import { useGigs } from "../hooks/useGigs";
 import GigCard from "./GigCard";
+import { Link } from "react-router-dom";
 
 const GigsToday = () => {
 
@@ -13,6 +14,7 @@ const GigsToday = () => {
             {
                 gigsToday.map((gig,i) => {
                     return (
+                    <Link to = {`/gigDetails/${gig.id}`}>
                         <GigCard
                             venue = {gig.venue}
                             blurb = {gig.blurb}
@@ -25,7 +27,8 @@ const GigsToday = () => {
                             id = {gig.id}
                             tickets = {gig.ticket}
                             genre = {gig.genre}
-                        />
+                        />                   
+                    </Link>
                     )
                 })
             }
