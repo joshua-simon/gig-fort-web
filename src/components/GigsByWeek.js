@@ -24,7 +24,7 @@ const GigsByWeek = () => {
                </div>
                 {gigs.map(gig => {
                    return (
-                     <Link to = {`/gigDetails/${gig.id}`}>
+                     <Link to = {`/gigDetails/${gig.id}`} style = {{textDecoration: 'none',color:'black'}}>
                         <GigCard
                            venue = {gig.venue}
                            blurb = {gig.blurb}
