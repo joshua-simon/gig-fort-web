@@ -10,17 +10,32 @@ const GigDetails = () => {
 
     const { id } = useParams()
     const gigs = useGigs()
-    const filteredGig = gigs.filter(gig => gig.id === id)
+    const filteredGig = gigs?.filter(gig => gig.id === id)
+
+
+
+
+
+let content
+
+
+    if (filteredGig.length > 0)  {
+
+        const free = filteredGig[0]?.isFree ? "|  Free Entry" : "";
+
+        const isTicketPrice = !filteredGig[0]?.isFree ? (
+        <div className="lcoationAndTime_row">
+            <ImTicket/>
+            <p>{filteredGig[0]?.ticketPrice}</p>
+        </div>
+        ) : null
     
+        const date = format( new Date(filteredGig[0]?.dateAndTime.seconds * 1000), "EEE LLL do Y")
+        const time = format(new Date(filteredGig[0]?.dateAndTime.seconds * 1000), "hbbb");
 
-    const free = filteredGig[0]?.isFree ? "|  Free Entry" : "";
 
-    const date = format( new Date(filteredGig[0]?.dateAndTime.seconds * 1000), "EEE LLL do Y")
-    const time = format(new Date(filteredGig[0]?.dateAndTime.seconds * 1000), "hbbb");
-    
 
-    return ( 
-    <div className="gigDetails_container">
+        content = <div className="gigDetails_container">
         <img src = {header} />
         <img className="gigDetails_image" src = {filteredGig[0]?.image}/>
        <div className="gigDetails_details">
@@ -34,9 +49,19 @@ const GigDetails = () => {
                     <AiOutlineClockCircle/>
                     <p>{`${date}  ${time}`}</p>
                 </div>
+                {isTicketPrice}
             </div>
        </div>
     </div>
+    } else {
+        return null
+    }
+    
+
+    return ( 
+        <>
+            {content}
+        </>
      );
 }
  
