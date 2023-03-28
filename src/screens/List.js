@@ -3,12 +3,20 @@ import { useGigs } from "../hooks/useGigs";
 import GigsToday from "../components/GigsToday";
 import GigsByWeek from "../components/GigsByWeek";
 import { format } from "date-fns";
+import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { useNavigate } from "react-router-dom";
 
 const List = () => {
   const [ showWeek,setShowWeek ] = useState(false)
   const currentDateMs = Date.now();
   const formattedDay = format(new Date(currentDateMs), "EEEE");
   const formattedWeek = format(new Date(currentDateMs), "LLLL do Y");
+
+  const navigate = useNavigate()
+
+  const handleGoBack = () => {
+    navigate(-1)
+  }
 
  const gigsToRender = showWeek ? (
     <GigsByWeek/>
@@ -30,6 +38,9 @@ const List = () => {
 
   return (
     <div className="list">
+      <button className="back_arrow" onClick={handleGoBack}>
+        <AiOutlineArrowLeft size={28}/>
+      </button>
       {date}
       <div className="listButtons">
         <button onClick={() => setShowWeek(false)} style = {showWeek ? buttonStyle : null}>Gigs Today</button>
