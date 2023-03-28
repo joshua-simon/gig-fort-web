@@ -14,7 +14,7 @@ const GigsToday = () => {
             {
                 gigsToday.map((gig,i) => {
                     return (
-                    <Link to = {`/gigDetails/${gig.id}`}>
+                    <Link to = {`/gigDetails/${gig.id}`} style = {{textDecoration: 'none',color:'black'}}>
                         <GigCard
                             venue = {gig.venue}
                             blurb = {gig.blurb}

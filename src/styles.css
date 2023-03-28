@@ -229,8 +229,11 @@ margin-top:8%;
 .gigDetails_container {
     display:flex;
     flex-direction: column;
-    position: relative;
     align-items: center;
+}
+
+.gigDetails_container .header {
+    position:relative
 }
 
 .gigDetails_image {
@@ -238,16 +241,78 @@ margin-top:8%;
     width:373px;
     height:252px;
     border-radius:26px;
-    top:30%;
+    top:10%;
 }
 
 .gigDetails_details {
-    position: absolute;
-    margin-top: 90%;
     font-family: NunitoSans;
     align-self: flex-start;
     margin-left:7%;
     font-size:25px;
     font-weight:700;
+    margin-top: 20% ;
+}
+
+.gigDetails_button {
+    background-color: #BB9456;
+    color:#FFFFFF;
+    border-radius: 8px;
+    font-family: NunitoSans;
+    border:none;
+    width:116px;
+    height:37px;
+    font-weight:700;
+    font-size:14px;
+}
+
+.locationAndTime {
+    display:flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.locationAndTime_row {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.locationAndTime_row p {
+    font-family: Lato;
+    font-size:14px;
+    font-style: normal;
+    color:#4B4B4B;
+    font-weight:400;
+    line-height: 17.04px;
+    margin-left: 5px;
+    margin-top:5px;
+}
+
+.blurb {
+ font-family: Lato;
+ font-size:14px;
+ color:#000000;
+ width:85%;
+ margin: 0 auto;
+ margin-top:10%;
+}
+
+.blurb h3 {
+    margin-bottom:10px;
+}
+
+.ticket {
+    margin-top:10%;
+    margin-bottom:5%;
+    align-self: flex-start;
+    margin-left:8%;
+}
+
+.back_arrow {
+    position:absolute;
+    left:7%;
+    top:5%;
+    border:none;
+    background-color: transparent;
 }
 
