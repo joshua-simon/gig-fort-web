@@ -17,7 +17,7 @@ body {
 .gigCardContainer {
     display:flex;
     flex-direction: column;
-    width:80%;
+    width:85%;
     height:auto;
     background-color:#FAF7F2;
     border-radius: 10px;
@@ -25,6 +25,11 @@ body {
     padding:2%;
     margin:0 auto;
     margin-bottom:5%;
+}
+
+.gigCardContainer p {
+    margin:0;
+    padding:0;
 }
 
 .gigCard_imageAndBlurb {
@@ -44,11 +49,17 @@ body {
 }
 
 .gigCard_header h3 {
-    font-family: NunitoSans
+    font-family: NunitoSans;
+    padding:0;
+    margin:0;
+    margin-bottom:3%;
 }
 
 .gigCard_header h5 {
-    font-family: Lato
+    font-family: Lato;
+    padding:0;
+    margin:0;
+    font-size:12px;
 }
 
 .gigCard_header_sub {
@@ -103,23 +114,36 @@ body {
     margin-top:10%;
 }
 
+.gigsToday_date p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .gigsToday_map p {
+    margin: 0;
+    padding: 0;
+  }
+
 .gigsToday_date_day {
     font-family: NunitoSans;
     font-size: 25px;
-    line-height: 34.1px;
 }
 
 .gigsToday_date_week {
     font-family: Lato;
     font-size:14px;
-    line-height: 16.8px;
 }
 
 .gigsThisWeek_date {
     /* display: flex;
     flex-direction: column; */
     margin-left:8%; 
-    margin-bottom:5px
+    margin-bottom:10px
+}
+
+.gigsThisWeek_date p {
+    padding:0;
+    margin:0;
 }
 
 .gigsThisWeek_date_day {
@@ -173,7 +197,7 @@ body {
     font-family: Lato;
     color: #747474;
     text-align: center;
-    margin-bottom:20px;
+    font-size:14px;
 }
 
 .map_text_pin {
@@ -185,9 +209,10 @@ height:5%
 display:flex;
 flex-direction: row;
 justify-content: space-between;
+align-items: center;
 width:80%;
 margin: 0 auto;
-margin-top:8%;
+margin-top:3%;
 }
 
 .arrow_left {
@@ -195,6 +220,11 @@ margin-top:8%;
     flex-direction: column;
     align-items: center;
     font-family: NunitoSans;
+    font-size:12px;
+}
+
+.arrow_left p {
+    margin-top: 0;
 }
 
 .arrow_right {
@@ -202,6 +232,12 @@ margin-top:8%;
     flex-direction: column;
     align-items: center;
     font-family: NunitoSans;
+    margin-left: auto;
+    font-size:12px;
+}
+
+.arrow_right p {
+        margin-top: 0;
 }
 
 .buttons {
@@ -211,6 +247,7 @@ margin-top:8%;
     width:80%;
     margin: 0 auto;
     margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .buttons button {
@@ -239,7 +276,7 @@ margin-top:8%;
 
 .gigDetails_image {
     position:absolute;
-    width:373px;
+    width:90%;
     height:252px;
     border-radius:26px;
     top:10%;
@@ -276,6 +313,11 @@ margin-top:8%;
     display:flex;
     flex-direction: row;
     align-items: center;
+}
+
+.locationAndTime p {
+    margin:0;
+    padding:0;
 }
 
 .locationAndTime_row p {

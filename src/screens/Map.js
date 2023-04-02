@@ -4,7 +4,7 @@ import { mapStyle } from "../util/mapStyle";
 import logo from "../assets/test2.png";
 import { useGigs } from "../hooks/useGigs";
 import mapPin from "../assets/map-pin-new.png";
-import mapPin50pc from "../assets/map-pin-50pc.png"
+import mapPin50pc from "../assets/map-pin6.png"
 import { Link,useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { AiFillCaretLeft } from "react-icons/ai";
@@ -82,7 +82,7 @@ const Map = () => {
 
   const containerStyle = {
     width: "90%",
-    height: "450px",
+    height: "400px",
     borderRadius: "26px",
     margin: "0 auto",
   };
