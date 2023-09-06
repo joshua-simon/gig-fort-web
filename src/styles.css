@@ -194,6 +194,7 @@ body {
 .map-container {
     flex: 1; /* This allows the map to take up all available space */
     overflow-y: auto; 
+    position:relative
   }
 
 .link {
@@ -387,6 +388,34 @@ margin-top:3%;
     height:10vh
 }
 
-.footer-container {
+/* Carousel */
 
+.carousel-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width:100%; 
+    z-index: 2;
+    top:15%;
+    left:0
+}
+
+.carousel {
+    width:240;
+    overflow:hidden
+}
+
+.slider {
+    display:flex;
+    flex-direction: row;
+}
+
+.item-container {
+    width: 80;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:90;
 }

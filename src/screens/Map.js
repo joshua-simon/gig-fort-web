@@ -9,10 +9,12 @@ import { Link,useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Carousel from "../components/Carousel";
 
 
 const Map = () => {
   const [selectedDateMs, setSelectedDateMs] = useState(Date.now());
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const [ isFree,setIsFree ] = useState(false)
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -83,8 +85,6 @@ const Map = () => {
   const containerStyle = {
     width: "100vw",
     height: "100vh",
-    // borderRadius: "26px",
-    // margin: "0 auto",
   };
 
   const onMarkerClick = (id) => {
@@ -127,42 +127,12 @@ const Map = () => {
 
   return (
     <div className="map">
-      {/* <div className="logo">
-        <img src={logo} />
-      </div> */}
 
-      {/* <div className="gigsToday_map">
-        <p className="gigsToday_date_day">{currentDay}</p>
-        <p className="gigsToday_date_week">{currentWeek}</p>
-      </div> */}
-
-      {/* <div className="map_text">
-        <p>
-          Tap on the <img className="map_text_pin" src={mapPin} /> icons on the
-          map to see more gig info
-        </p>
-      </div> */}
       <Header/>
+      <Carousel setSelectedDate = {setSelectedDate} selectedDate = {selectedDate}/>
       {map}
       <Footer/>
 
-      {/* <div className="arrows">
-        <div className="arrow_left">
-          <AiFillCaretLeft size={48} onClick={() => addDays(-1)} />
-          <p>Previous Day</p>
-        </div>
-        <div className="arrow_right">
-          <AiFillCaretRight size={48} onClick={() => addDays(1)} />
-          <p>Next Day</p>
-        </div>
-      </div> */}
-{/* 
-      <div className="buttons">
-        <Link to="/list">
-          <button>List</button>
-        </Link>
-        <button onClick = {() => setIsFree((currentState) => !currentState)} style ={selectedButtonStyle}>Free Events</button>
-      </div> */}
     </div>
   );
 };
