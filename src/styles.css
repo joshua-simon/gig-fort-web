@@ -8,8 +8,17 @@
     src: url("./assets/NunitoSans-Bold.ttf");
 }
 
+@media screen and (min-width: 768px) {
+    body {
+      width:40%;
+      margin: 0 auto;
+    }
+}
+
 body {
     background-color: #F6F6F5;
+    margin: 0;
+    padding: 0;
 }
 
 /* Gig Card */
@@ -35,11 +44,12 @@ body {
 .gigCard_imageAndBlurb {
     display: flex;
     flex-direction: row;
+
 }
 
 .gigCard_imageAndBlurb img {
     width:100px;
-    height:85.63px;
+    height:83px;
     border-radius: 8px;
     margin-right: 2%;
 }
@@ -111,7 +121,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-left:7%;
-    margin-top:10%;
+    margin-top:5%;
+    margin-bottom:5%;
 }
 
 .gigsToday_date p {
@@ -138,7 +149,7 @@ body {
     /* display: flex;
     flex-direction: column; */
     margin-left:8%; 
-    margin-bottom:10px
+    margin-bottom:20px
 }
 
 .gigsThisWeek_date p {
@@ -160,38 +171,39 @@ body {
 
 /* Map */
 
-.logo {
+/* .logo {
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom:10%;
+    margin-bottom:5%;
     margin-top:20px;
 }
 
 .logo img{
-    width:200px;
+    width:70px;
     height:auto;
-}
+} */
 
 .map {
-    display:flex;
-    flex-direction: column;
-    /* align-items: center; */
+    display: flex;
+    flex-direction: column; 
+    height: 90vh; 
+    overflow: hidden; 
 }
 
 .map-container {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 10px;
+    flex: 1; /* This allows the map to take up all available space */
+    overflow-y: auto; 
   }
 
 .link {
     margin-top:10%;
 }
 
-.gigsToday_map {
+/* .gigsToday_map {
    margin-left: 8%;
    margin-bottom:20px;
-}
+} */
 
 .map_text {
     font-family: Lato;
@@ -246,7 +258,7 @@ margin-top:3%;
     justify-content: space-between;
     width:80%;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 15%;
     margin-bottom: 5%;
 }
 
@@ -271,7 +283,11 @@ margin-top:3%;
 }
 
 .gigDetails_container .header {
-    position:relative
+    position:relative;
+}
+
+.header img {
+    transform: translateY(-8%);
 }
 
 .gigDetails_image {
@@ -288,7 +304,12 @@ margin-top:3%;
     margin-left:7%;
     font-size:25px;
     font-weight:700;
-    margin-top: 20% ;
+    margin-top: 15% ;
+}
+
+.gigDetails_details p {
+    margin:0;
+    padding:0;
 }
 
 .gigDetails_button {
@@ -359,3 +380,13 @@ margin-top:3%;
     background-color: transparent;
 }
 
+/* Header */
+
+.header-container {
+    background-color: #2596be;
+    height:10vh
+}
+
+.footer-container {
+
+}

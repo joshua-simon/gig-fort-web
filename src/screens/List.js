@@ -41,11 +41,11 @@ const List = () => {
       <button className="back_arrow" onClick={handleGoBack}>
         <AiOutlineArrowLeft size={28}/>
       </button>
-      {date}
       <div className="listButtons">
         <button onClick={() => setShowWeek(false)} style = {showWeek ? buttonStyle : null}>Gigs Today</button>
         <button onClick={() => setShowWeek(true)} style = {showWeek ? null : buttonStyle}>Gigs This Week</button>
       </div>
+      {date}
       <div className="listContainer">
         {gigsToRender}
       </div>

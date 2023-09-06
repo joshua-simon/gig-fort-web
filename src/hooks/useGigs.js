@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { query,collection,getDocs} from 'firebase/firestore' 
+import { query,collection,getDocs, where} from 'firebase/firestore' 
 import { db } from "../firebase";
 
 export const useGigs = () => {
@@ -8,7 +8,7 @@ export const useGigs = () => {
     useEffect(() => {
       const getGigs = async () => {
         try {
-          const q = query(collection(db, 'gigs'))
+          const q = query(collection(db, 'gigs'), where('city', '==', 'Wellington'))
           const querySnapshot = await getDocs(q)
           const queriedGigs = querySnapshot.docs.map(doc => ({
             id: doc.id,

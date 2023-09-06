@@ -4,11 +4,11 @@ import { mapStyle } from "../util/mapStyle";
 import logo from "../assets/test2.png";
 import { useGigs } from "../hooks/useGigs";
 import mapPin from "../assets/map-pin-new.png";
-import mapPin50pc from "../assets/map-pin6.png"
+import mapPin50pc from "../assets/map-pin-new.png"
 import { Link,useNavigate } from "react-router-dom";
 import { format } from "date-fns";
-import { AiFillCaretLeft } from "react-icons/ai";
-import { AiFillCaretRight } from "react-icons/ai";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 
 const Map = () => {
@@ -81,10 +81,10 @@ const Map = () => {
 
 
   const containerStyle = {
-    width: "90%",
-    height: "400px",
-    borderRadius: "26px",
-    margin: "0 auto",
+    width: "100vw",
+    height: "100vh",
+    // borderRadius: "26px",
+    // margin: "0 auto",
   };
 
   const onMarkerClick = (id) => {
@@ -97,7 +97,12 @@ const Map = () => {
         zoom={14}
         center={center}
         mapContainerStyle={containerStyle}
-        options={{ styles: mapStyle }}
+        options={{ 
+          styles: mapStyle,
+          zoomControl:false,
+          mapTypeControl:false,
+          streetViewControl:false
+        }}
       >
         {gigsToDisplay.map((gig, i) => {
           const lat = gig.location.latitude;
@@ -108,6 +113,7 @@ const Map = () => {
               position={location}
               icon={{
                 url: mapPin50pc,
+                scaledSize: new window.google.maps.Size(25, 35), // Set custom size for the icon
               }}
               onClick = {() => onMarkerClick(gig.id)}
             ></Marker>
@@ -121,25 +127,26 @@ const Map = () => {
 
   return (
     <div className="map">
-      <div className="logo">
+      {/* <div className="logo">
         <img src={logo} />
-      </div>
+      </div> */}
 
-      <div className="gigsToday_map">
+      {/* <div className="gigsToday_map">
         <p className="gigsToday_date_day">{currentDay}</p>
         <p className="gigsToday_date_week">{currentWeek}</p>
-      </div>
+      </div> */}
 
-      <div className="map_text">
+      {/* <div className="map_text">
         <p>
           Tap on the <img className="map_text_pin" src={mapPin} /> icons on the
           map to see more gig info
         </p>
-      </div>
-
+      </div> */}
+      <Header/>
       {map}
+      <Footer/>
 
-      <div className="arrows">
+      {/* <div className="arrows">
         <div className="arrow_left">
           <AiFillCaretLeft size={48} onClick={() => addDays(-1)} />
           <p>Previous Day</p>
@@ -148,14 +155,14 @@ const Map = () => {
           <AiFillCaretRight size={48} onClick={() => addDays(1)} />
           <p>Next Day</p>
         </div>
-      </div>
-
+      </div> */}
+{/* 
       <div className="buttons">
         <Link to="/list">
           <button>List</button>
         </Link>
         <button onClick = {() => setIsFree((currentState) => !currentState)} style ={selectedButtonStyle}>Free Events</button>
-      </div>
+      </div> */}
     </div>
   );
 };

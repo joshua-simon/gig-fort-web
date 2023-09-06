@@ -18,15 +18,15 @@ const GigCard = ({
   return (
     <div className="gigCardContainer">
         <div className="gigCard_header">
-            <h3>{gigName}</h3>
+            <h3>{`${gigName?.substring(0,30)}...`}</h3>
             <div className='gigCard_header_sub'>
                 <TfiLocationPin/>
-                <h5>{`${venue} | ${genre}`}</h5>
+                <h5>{`${venue} | ${genre ? genre : ''}`}</h5>
             </div>
         </div>
         <div className="gigCard_imageAndBlurb">
             <img src = {image}/>
-            <p>{`${blurb.substring(0,60)}...`}</p>
+            <p>{`${blurb?.substring(0,60)}...`}</p>
         </div>
             <p className='seeMore'>{`See More >>`}</p>
     </div>

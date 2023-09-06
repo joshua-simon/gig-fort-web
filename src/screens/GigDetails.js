@@ -50,10 +50,10 @@ const GigDetails = () => {
 
         
         <div className="header">
+            <img src={header} />    
             <button className="back_arrow" onClick={handleGoBack}>
                 <AiOutlineArrowLeft size={28}/>
             </button>
-            <img src={header} />    
         </div>
 
         <img className="gigDetails_image" src={filteredGig[0]?.image} />
