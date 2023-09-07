@@ -1,9 +1,7 @@
 import { useState, useMemo } from "react";
 import { GoogleMap, useJsApiLoader, Marker, OverlayView } from "@react-google-maps/api";
 import { mapStyle } from "../util/mapStyle";
-import logo from "../assets/test2.png";
 import { useGigs } from "../hooks/useGigs";
-import mapPin from "../assets/map-pin-new.png";
 import mapPin50pc from "../assets/map-pin-new.png"
 import { Link,useNavigate } from "react-router-dom";
 import { format } from "date-fns";

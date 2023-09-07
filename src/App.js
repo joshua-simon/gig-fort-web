@@ -5,6 +5,7 @@ import GigDetails from "./screens/GigDetails";
 import Profile from "./screens/Profile";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
+import RegistrationSuccess from "./screens/RegistrationSuccess";
 import './styles.css'
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path = '/profile' element = {<Profile/>}/>
         <Route path = '/login' element = {<Login/>}/>
         <Route path = '/register' element = {<Register/>}/>
+        <Route path = '/registration-success' element = {<RegistrationSuccess/>}/>
       </Routes>
     </Router>
   );
