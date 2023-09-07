@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker, OverlayView } from "@react-google-maps/api";
 import { mapStyle } from "../util/mapStyle";
 import logo from "../assets/test2.png";
 import { useGigs } from "../hooks/useGigs";
@@ -14,7 +14,6 @@ import Carousel from "../components/Carousel";
 
 const Map = () => {
   const [selectedDateMs, setSelectedDateMs] = useState(Date.now());
-  const [selectedDate, setSelectedDate] = useState(new Date());
   const [ isFree,setIsFree ] = useState(false)
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -91,6 +90,10 @@ const Map = () => {
     navigate(`/gigDetails/${id}`)
   }
 
+  const getPixelPositionOffset = (width, height) => {
+    return { x: -(width / 2), y: -(height -16) }; // Adjust these values to position your text correctly
+  };
+
   const map = isLoaded ? (
     <div className="map-container">
       <GoogleMap
@@ -101,7 +104,8 @@ const Map = () => {
           styles: mapStyle,
           zoomControl:false,
           mapTypeControl:false,
-          streetViewControl:false
+          streetViewControl:false,
+          fullscreenControl: false 
         }}
       >
         {gigsToDisplay.map((gig, i) => {
@@ -116,7 +120,17 @@ const Map = () => {
                 scaledSize: new window.google.maps.Size(25, 35), // Set custom size for the icon
               }}
               onClick = {() => onMarkerClick(gig.id)}
-            ></Marker>
+            >
+              <OverlayView
+                position = {location}
+                mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+                getPixelPositionOffset={getPixelPositionOffset}
+              >
+              <div style={{ padding: "2px 5px", borderRadius: "3px",fontFamily:'Lato', fontWeight:'bold' }}>
+                {gig.venue.length > 10 ? `${gig.venue.substring(0,9)}...` : gig.venue} {/* Assume gig.name is the text you want to display */}
+              </div>
+              </OverlayView>
+            </Marker>
           );
         })}
       </GoogleMap>
@@ -129,7 +143,7 @@ const Map = () => {
     <div className="map">
 
       <Header/>
-      <Carousel setSelectedDate = {setSelectedDate} selectedDate = {selectedDate}/>
+      <Carousel setSelectedDate = {setSelectedDateMs} selectedDate = {selectedDateMs}/>
       {map}
       <Footer/>
 

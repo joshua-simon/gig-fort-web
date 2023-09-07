@@ -54,7 +54,7 @@ const Carousel = ({ setSelectedDate, selectedDate }) => {
                                 ...styles.dateContainer,
                                 backgroundColor: isSameDay(date, selectedDate) ? '#2596be' : 'rgb(55, 125, 138)'
                             }}>
-                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: "center", justifyContent: "center", marginTop: '10%' }}>
+                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: "center", justifyContent: "center", marginTop: '15%' }}>
                                     <p style={styles.date_header}>{format(date, "EEE")}</p>
                                     <p style={styles.date_subheader}>
                                         {format(date, "d")} {format(date, "MMM")}
@@ -78,7 +78,6 @@ const styles = {
         alignItems: 'center',
         width: "100%",
         position: 'absolute',
-        zIndex: 1,
         left: 0
     },
     carousel: {

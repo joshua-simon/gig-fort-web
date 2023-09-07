@@ -188,7 +188,8 @@ body {
     display: flex;
     flex-direction: column; 
     height: 90vh; 
-    overflow: hidden; 
+    overflow: hidden;
+
 }
 
 .map-container {
@@ -397,8 +398,8 @@ margin-top:3%;
     align-items: center;
     position: absolute;
     width:100%; 
-    z-index: 2;
-    top:15%;
+    z-index: 1;
+    top:12%;
     left:0
 }
 
@@ -418,4 +419,36 @@ margin-top:3%;
     justify-content: center;
     align-items: center;
     height:90;
+}
+
+/* Footer */
+
+.footer-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:#F7F6F5;
+    z-index: 0;
+}
+
+.footer-container-item {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.footer-container-item p {
+    margin:0;
+    padding:0;
+    font-family: Lato;
+    margin-top:2px;
+    color:#747474;
+    font-size:14px;
+}
+
+.list-component-container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
 }

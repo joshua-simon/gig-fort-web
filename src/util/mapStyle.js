@@ -1,4 +1,4 @@
-export const mapStyle = [
+export const mapStyle =[
   {
     "elementType": "geometry",
     "stylers": [
@@ -11,7 +11,7 @@ export const mapStyle = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#523735"
+        "color": "#f29086"
       }
     ]
   },
