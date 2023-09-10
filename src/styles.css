@@ -534,3 +534,36 @@ margin-top:3%;
     border:none;
     font-size:16px;
 }
+
+/* Registration success */
+
+.registration-success-container {
+    display:'flex';
+    flex-direction: column;
+    width:80%;
+    margin: 0 auto;
+    margin-top:30%
+}
+
+.registration-success-container p {
+    font-family: NunitoSans;
+    font-size:30px;
+    text-align:center;
+}
+
+.registration-success-container-button {
+    text-decoration: none;
+}
+
+.registration-success-container-button p {
+   background-color: #377D8A;
+   color:white;
+   font-size: 16px;
+   padding:3%;
+   border-radius: 4px;
+   transition: opacity 0.2s;
+}
+
+.registration-success-container-button p:active {
+    opacity: 0.6; 
+}

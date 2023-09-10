@@ -1,14 +1,22 @@
 import { useState } from 'react'
 import { auth, db } from '../firebase'
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { collection,setDoc,doc } from "firebase/firestore";
+import { setDoc,doc } from "firebase/firestore";
 import { useNavigate } from 'react-router-dom';
+import { ClipLoader } from 'react-spinners';
+
+const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "white",
+  };
 
 
 const Register = () => {
     const [userDetails,setUserDetails] = useState({firstName:'',lastName:'',email:'',password:'',repeatPassword:''})
     const [errorMessages,setErrorMessages] = useState({})
     const [loading, setLoading] = useState(false);
+    let [color, setColor] = useState("#FFFFFF");
 
     const navigate = useNavigate()
 
@@ -125,6 +133,15 @@ const Register = () => {
         }
     }
 
+    const loadingSpinner =  <ClipLoader
+    color={color}
+    loading={loading}
+    cssOverride={override}
+    size={20}
+    aria-label="Loading Spinner"
+    data-testid="loader"
+  />
+
     return ( 
         <div className = "register-container">
             <h2>Sign up for Gig Fort</h2>
@@ -175,7 +192,7 @@ const Register = () => {
                 <button 
                 type = 'submit'
                 className = 'register-submit-button'
-                >Submit</button>
+                >{!loading ? 'Submit' : loadingSpinner}</button>
 
            </form>
         </div>
