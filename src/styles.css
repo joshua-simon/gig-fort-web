@@ -15,10 +15,10 @@
     }
 }
 
-body {
+body,html {
     background-color: #F6F6F5;
+    height: 100%;
     margin: 0;
-    padding: 0;
 }
 
 /* Gig Card */
@@ -422,7 +422,12 @@ margin-top:3%;
     flex-direction: row;
     justify-content: space-around;
     background-color:#F7F6F5;
-    z-index: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom:3%;
+    border-top: 1px solid #d3d3d3;
 }
 
 .footer-container-item {
@@ -441,11 +446,23 @@ margin-top:3%;
     font-size:14px;
 }
 
-.list-component-container {
+/* .list-component-container {
     display: grid;
     grid-template-rows: 1fr auto;
     min-height: 100vh;
-}
+} */
+
+.list-component-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .list-component-container-content {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+
 
 /* Header */
 

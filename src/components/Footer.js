@@ -23,14 +23,14 @@ const Footer = () => {
     return (
         <div className="footer-container">
             <div className='footer-container-item' onClick = {() => toggleState('/list')} >
-            {selectedButton === '/List' ? (
+            {selectedButton === '/list' ? (
             <FaListUl size={20} color="#377D8A" />
           ) : (
             <FiList size={20} color="#377D8A" />
           )}
                 <p>List</p>
             </div>
-            <div className='footer-container-item'>
+            <div className='footer-container-item' onClick = {() => toggleState('/')}>
             {selectedButton === '/' ? (
             <BsMapFill size={20} color="#377D8A" />
           ) : (
