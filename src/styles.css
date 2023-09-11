@@ -16,7 +16,7 @@
 }
 
 body,html {
-    background-color: #F6F6F5;
+    background-color: #F3F1ED;
     height: 100%;
     margin: 0;
 }
@@ -125,12 +125,17 @@ body,html {
     transform: translateY(-10%)
 }
 
-.seeMore {
+a .seeMore {
     font-family: Lato;
     color:#377D8A;
-    font-size:12;
+    font-size:12px;
     text-align: right;
-    margin-right:10%
+    margin-left:1%;
+    width:100%
+}
+
+.gigCard_imageAndBlurb_blurb a {
+    margin-left:2%
 }
 
 .gigCard_buttons {

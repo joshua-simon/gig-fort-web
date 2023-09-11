@@ -14,7 +14,6 @@ const GigsToday = () => {
             {
                 gigsToday.map((gig,i) => {
                     return (
-                    <Link to = {`/gigDetails/${gig.id}`} style = {{textDecoration: 'none',color:'black'}}>
                         <GigCard
                             venue = {gig.venue}
                             blurb = {gig.blurb}
@@ -28,7 +27,6 @@ const GigsToday = () => {
                             tickets = {gig.ticket}
                             genre = {gig.genre}
                         />                   
-                    </Link>
                     )
                 })
             }

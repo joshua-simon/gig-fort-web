@@ -24,16 +24,19 @@ const GigsByWeek = () => {
                </div>
                 {gigs.map(gig => {
                    return (
-                     <Link to = {`/gigDetails/${gig.id}`} style = {{textDecoration: 'none',color:'black'}}>
                         <GigCard
-                           venue = {gig.venue}
-                           blurb = {gig.blurb}
-                           image = {gig.image}
-                           gigName = {gig.gigName}
-                           genre = {gig.genre}
-                           dateAndTime = {gig.dateAndTime}
+                        venue = {gig.venue}
+                        blurb = {gig.blurb}
+                        dateAndTime = {gig.dateAndTime}
+                        gigName = {gig.gigName}
+                        image = {gig.image}
+                        isFree = {gig.isFree}
+                        ticketPrice = {gig.ticketPrice}
+                        location = {gig.location}
+                        id = {gig.id}
+                        tickets = {gig.ticket}
+                        genre = {gig.genre}
                         />
-                     </Link>
                    ) 
                 })}
             </div>
