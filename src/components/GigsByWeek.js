@@ -31,6 +31,7 @@ const GigsByWeek = () => {
                            image = {gig.image}
                            gigName = {gig.gigName}
                            genre = {gig.genre}
+                           dateAndTime = {gig.dateAndTime}
                         />
                      </Link>
                    ) 

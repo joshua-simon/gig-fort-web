@@ -31,7 +31,7 @@ body,html {
     background-color:#FAF7F2;
     border-radius: 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    padding:2%;
+    padding:4%;
     margin:0 auto;
     margin-bottom:5%;
 }
@@ -41,10 +41,20 @@ body,html {
     padding:0;
 }
 
+.blurb {
+    margin-bottom:10%
+}
+
 .gigCard_imageAndBlurb {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
 
+.gigCard_imageAndBlurb_blurb {
+    display:flex;
+    flex-direction:row;
+    align-items: center;
 }
 
 .gigCard_imageAndBlurb img {
@@ -55,7 +65,37 @@ body,html {
 }
 
 .gigCard_imageAndBlurb p {
-    font-family: Lato
+    font-family: Lato;
+    font-size:14px;
+    width:60%
+}
+
+.gigCard_header {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3/4 and 1/4 of the width respectively */
+    gap: 30%; /* adjust the gap as required */
+    margin-bottom: 2%;
+}
+
+.gigCard_header_text {
+    display: grid;
+    grid-template-rows: auto auto; /* Automatically adjust row size based on content */
+}
+
+.gigCard_header_datebox {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    width:42px;
+    height:42px;
+    flex-shrink:0;
+    border-radius:4px;
+    background-color:#659AA3;
+    font-family: NunitoSans;
+}
+
+.gigCard_header_datebox_month {
+    font-size: 12px;
 }
 
 .gigCard_header h3 {
@@ -76,12 +116,21 @@ body,html {
     display:flex;
     flex-direction:row;
     margin-bottom: 5%;
+    font-family: LatoRegular;
+}
+
+.gigCard_header_sub p {
+    font-family: Lato;
+    font-size: 12px; 
+    transform: translateY(-10%)
 }
 
 .seeMore {
-    text-align: right;
     font-family: Lato;
-    color:#377D8A
+    color:#377D8A;
+    font-size:12;
+    text-align: right;
+    margin-right:10%
 }
 
 
@@ -426,7 +475,7 @@ margin-top:3%;
     bottom: 0;
     left: 0;
     width: 100%;
-    margin-bottom:3%;
+    padding-bottom:2%;
     border-top: 1px solid #d3d3d3;
 }
 
