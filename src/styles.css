@@ -133,6 +133,28 @@ body,html {
     margin-right:10%
 }
 
+.gigCard_buttons {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family:Lato;
+    font-size:12px;
+    margin-top:3%;
+    border-top: 1px solid #d3d3d3;
+}
+
+.gigCard_button {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:6px;
+}
+
+.gigCard_button p {
+    font-family:Lato;
+    color:#377D8A
+}
+
 
 /* List */
 

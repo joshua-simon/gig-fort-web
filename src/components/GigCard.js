@@ -1,5 +1,10 @@
+import { useContext } from 'react';
 import { TfiLocationPin } from 'react-icons/tfi'
 import { subHours, subMinutes, format, set,getDate } from "date-fns";
+import { AiFillHeart,AiOutlineHeart } from 'react-icons/ai'
+import { BsBookmark,BsBookmarkFill } from 'react-icons/bs'
+import { AuthContext } from '../AuthContext';
+import { useGigData } from '../hooks/useGigData';
 
 const GigCard = ({
   venue,
@@ -14,6 +19,19 @@ const GigCard = ({
   tickets,
   genre
 }) => {
+
+
+  const { user } = useContext(AuthContext)
+
+  const {
+    isGigSaved,
+    toggleSaveGig,
+    likes,
+    toggleLiked,
+    isGigLiked,
+    isPopupVisible
+  } = useGigData(id, user?.uid);
+
 
   const dateInSeconds = dateAndTime?.seconds
   const gigDate = new Date(dateInSeconds*1000)
@@ -49,7 +67,19 @@ const GigCard = ({
               <p className='blurb'>{`${blurb?.substring(0,40)}...`}</p>
               <p className='seeMore'>{`See More >>`}</p>
             </div>
-        </div>  
+        </div>
+
+        <div className='gigCard_buttons'>
+          <div className='gigCard_button'>
+            <AiOutlineHeart size = {24} color="#377D8A"/>
+            <p>Like</p>
+          </div>
+          <div className='gigCard_button'>
+            <BsBookmark size = {22} color="#377D8A"/>
+            <p>Save</p>
+          </div>
+        </div>
+
     </div>
   );
 
