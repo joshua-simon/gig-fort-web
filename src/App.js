@@ -7,6 +7,7 @@ import Login from "./screens/Login";
 import Register from "./screens/Register";
 import Logout from "./screens/Logout";
 import RegistrationSuccess from "./screens/RegistrationSuccess";
+import ForgotPassword from "./screens/ForgotPassword";
 import { AuthProvider } from "./AuthContext";
 import './styles.css'
 
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/registration-success" element={<RegistrationSuccess />} />
           <Route path = '/logout' element = {<Logout/>}/>
+          <Route path = '/forgot-password' element = {<ForgotPassword/>}/>
         </Routes>
       </Router>
     </AuthProvider>
