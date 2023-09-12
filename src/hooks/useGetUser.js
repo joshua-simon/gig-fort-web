@@ -3,7 +3,7 @@ import { query, collection, where, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase'
 
 export const useGetUser = (userUID) => {
-    const [user, setUser] = useState<any>(null);
+    const [user, setUser] = useState(null);
   
     useEffect(() => {
       if (!userUID) return; // Return early if userUID is not available
