@@ -42,7 +42,7 @@ const Logout = () => {
         <div className="logout-container">
             <p>Are you sure you want to log out?</p>
             <div className="logout-container-logout-button" onClick = {signUserOut}>{!loading ? 'Log out' : loadingSpinner}</div>
-            <div className="logout-container-return-button" onClick = {() => navigate('/profile')}>Return to Profile</div>
+            <div className="logout-container-return-button" onClick = {() => navigate()}>Return to Profile</div>
         </div>
     )
 }
