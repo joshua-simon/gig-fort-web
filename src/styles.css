@@ -1,3 +1,5 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 @font-face {
     font-family: Lato;
     src: url("./assets/Lato-Regular.ttf");
@@ -754,4 +756,48 @@ margin-top:3%;
 
 .header-profile-cog:active {
     opacity:0.6;
+}
+
+/* Log out */
+
+.logout-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50%;
+    text-align: center;
+}
+
+.logout-container p {
+    font-family: NunitoSans;
+    font-size:20px;
+}
+
+.logout-container-logout-button {
+    display:flex;
+    justify-content: center;
+    font-family: NunitoSans;
+    background-color: #377D8A;
+    color:white;
+    padding:10px;
+    border-radius:4px;
+    align-items:center;
+    width:85%;
+    transition: opacity 0.2s;
+}
+
+.logout-container-return-button {
+    font-family: NunitoSans;
+    color:#377D8A;
+    padding:10px;
+    margin-top:3%;
+    transition: opacity 0.2s;
+}
+
+.logout-container-logout-button:active {
+    opacity: 0.6
+}
+
+.logout-container-return-button:active {
+    opacity: 0.6
 }

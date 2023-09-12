@@ -5,6 +5,7 @@ import GigDetails from "./screens/GigDetails";
 import Profile from "./screens/Profile";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
+import Logout from "./screens/Logout";
 import RegistrationSuccess from "./screens/RegistrationSuccess";
 import { AuthProvider } from "./AuthContext";
 import './styles.css'
@@ -20,10 +21,8 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route
-            path="/registration-success"
-            element={<RegistrationSuccess />}
-          />
+          <Route path="/registration-success" element={<RegistrationSuccess />} />
+          <Route path = '/logout' element = {<Logout/>}/>
         </Routes>
       </Router>
     </AuthProvider>
