@@ -981,3 +981,53 @@ margin-top:3%;
 .edit-details-container form button:active {
     opacity:0.6
 }
+
+.delete-account-container {
+    display:flex;
+    flex-direction:column;
+    margin:0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50%;
+    width:85%;
+}
+
+.delete-account-container p {
+    font-family: NunitoSans;
+    font-size:20px;
+}
+
+.delete-account-container-delete-account-button {
+    display:flex;
+    justify-content: center;
+    font-family: NunitoSans;
+    background-color: #377D8A;
+    color:white;
+    padding:10px;
+    border-radius:4px;
+    align-items:center;
+    width:85%;
+    margin:0 auto;
+    transition: opacity 0.2s;
+    margin-top:5%;
+    border:none;
+    transition: opacity 0.2s;    
+}
+
+.delete-account-container-return-button {
+    font-family: NunitoSans;
+    color:#377D8A;
+    padding:10px;
+    margin-top:3%;
+    transition: opacity 0.2s;
+    border:none;
+}
+
+.delete-account-container-delete-account-button:active {
+    opacity:0.6
+}
+
+.delete-account-container-return-button:active {
+    opacity:0.6
+}

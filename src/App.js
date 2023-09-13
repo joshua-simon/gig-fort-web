@@ -9,6 +9,7 @@ import Logout from "./screens/Logout";
 import RegistrationSuccess from "./screens/RegistrationSuccess";
 import ForgotPassword from "./screens/ForgotPassword";
 import EditDetails from "./screens/EditDetails";
+import DeleteAccount from "./screens/DeleteAccount";
 import { AuthProvider } from "./AuthContext";
 import './styles.css'
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route path = '/logout' element = {<Logout/>}/>
           <Route path = '/forgot-password' element = {<ForgotPassword/>}/>
           <Route path = '/edit-details' element = {<EditDetails/>}/>
+          <Route path = '/delete-account' element = {<DeleteAccount/>}/>
         </Routes>
       </Router>
     </AuthProvider>
