@@ -89,7 +89,8 @@ const styles = {
         flexDirection: 'row',
     },
     itemContainer: {
-        width: 80,
+        paddingLeft:0, 
+        paddingRight: 10,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -105,7 +106,7 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        top:'10%'
+        // top:'10%',
     },
     date_header: {
         color: 'white',

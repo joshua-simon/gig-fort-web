@@ -19,7 +19,7 @@ const HeaderProfile = () => {
                     <Dropdown.Item eventKey="1" onClick = {() => navigate('/logout')}>Log out</Dropdown.Item>
                     <Dropdown.Item eventKey="2" onClick = {() => navigate('/edit-details')}>Edit details</Dropdown.Item>
                     <Dropdown.Item eventKey="3" onClick = {() => navigate('/delete-account')}>Delete account</Dropdown.Item>
-                    <Dropdown.Item eventKey="3">App information</Dropdown.Item>
+                    <Dropdown.Item eventKey="3" onClick = {() => navigate('/app-info')}>App information</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
 

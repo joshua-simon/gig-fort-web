@@ -51,8 +51,8 @@ const Profile = () => {
         <p>You haven't saved any gigs yet!</p>
       </div>
     ) : (
-      <div style = {{marginTop:'10%'}}>
-        <p style = {{fontFamily:'NunitoSans', margin:0,fontSize:25,marginLeft: '5%',marginBottom: '3%'}}>Saved Gigs</p>
+      <div style = {{marginTop:'10%',marginBottom:'15%'}}>
+        <p style = {{fontFamily:'NunitoSans', margin:0,fontSize:20,marginLeft: '5%',marginBottom: '3%'}}>Saved Gigs</p>
         {savedGigsFromCurrentDate.map((gig, i) => {
           return (
             <GigCard

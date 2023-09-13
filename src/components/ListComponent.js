@@ -35,7 +35,7 @@ const ListComponent = () => {
 </div>
  )
 
- const buttonStyle = {backgroundColor:'#F6F6F5',color:'#377D8A'}
+ const buttonStyle = {backgroundColor:'#F3F1ED',color:'#377D8A'}
 
   return (
     <div className="list">

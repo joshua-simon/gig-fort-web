@@ -12,10 +12,20 @@
 
 @media screen and (min-width: 768px) {
     body {
-      width:40%;
-      margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
     }
+    .carousel-container,
+    .footer-container {
+        width: 100%;  /* this will be 100% of the body's width, which is 40% of the viewport */
+    }
+    .list {
+        padding-top: 90%;
+     }
 }
+
 
 body,html {
     background-color: #F3F1ED;
@@ -33,7 +43,7 @@ body,html {
     background-color:#FAF7F2;
     border-radius: 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    padding:4%;
+    padding:3%;
     margin:0 auto;
     margin-bottom:5%;
 }
@@ -91,15 +101,21 @@ body,html {
 }
 
 .gigCard_header {
-    display: grid;
-    grid-template-columns: 3fr 1fr; /* 3/4 and 1/4 of the width respectively */
-    gap: 30%; /* adjust the gap as required */
-    margin-bottom: 2%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
 }
 
 .gigCard_header_text {
-    display: grid;
-    grid-template-rows: auto auto; /* Automatically adjust row size based on content */
+    display:flex;
+    flex-direction: column;
+}
+
+.gigCard_header p {
+    font-family: NunitoSans;
+    padding:0;
+    margin:0;
+    margin-bottom:3%;
 }
 
 .gigCard_header_datebox {
@@ -118,12 +134,6 @@ body,html {
     font-size: 12px;
 }
 
-.gigCard_header h3 {
-    font-family: NunitoSans;
-    padding:0;
-    margin:0;
-    margin-bottom:3%;
-}
 
 .gigCard_header h5 {
     font-family: Lato;
@@ -187,6 +197,7 @@ a .seeMore {
  display:flex;
  flex-direction: column;
  margin-top:15%;
+ margin-bottom:15%;
 }
 
 .listContainer {
@@ -283,7 +294,7 @@ a .seeMore {
 .map {
     display: flex;
     flex-direction: column; 
-    height: 90vh; 
+    height: 100vh; 
     overflow: hidden;
 
 }
@@ -494,7 +505,7 @@ margin-top:3%;
 }
 
 .carousel {
-    width:240;
+    width:240px;
     overflow:hidden
 }
 
@@ -504,7 +515,7 @@ margin-top:3%;
 }
 
 .item-container {
-    width: 80;
+    width: 80px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -551,6 +562,7 @@ margin-top:3%;
 .list-component-container {
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
   
   .list-component-container-content {
@@ -735,7 +747,7 @@ margin-top:3%;
 .profile-main-header-name {
     font-family: NunitoSans;
     color:white;
-    font-size:32px;
+    font-size:28px;
     margin:0;
     margin-left:2%
 }
@@ -1030,4 +1042,21 @@ margin-top:3%;
 
 .delete-account-container-return-button:active {
     opacity:0.6
+}
+
+/* App info */
+
+.app-info-container {
+    display:flex;
+    flex-direction: column;
+    font-family: NunitoSans;
+    width: 85%;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    margin-top:10%;
+}
+
+.app-info-container-header {
+    margin-bottom: 5%;
 }
