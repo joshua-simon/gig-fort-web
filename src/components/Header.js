@@ -39,10 +39,10 @@ const Header = () => {
     ) : (
       <div className="header-buttons">
         <Link to={"/login"} className="header-buttons-login">
-          <div>Login</div>
+         Login
         </Link>
         <Link to={"/register"} className="header-buttons-signUp">
-          <div>Sign up</div>
+          Sign up
         </Link>
       </div>
     );

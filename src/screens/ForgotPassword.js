@@ -5,7 +5,8 @@ import { auth } from "../firebase";
 const ForgotPassword = () => {
     const [ resetEmail,setResetEmail ] = useState('')
 
-    const sendPasswordEmail = () => {
+    const sendPasswordEmail = (e) => {
+        e.preventDefault()
         if(resetEmail.trim() === '') {
             alert('Email is required')
             return
