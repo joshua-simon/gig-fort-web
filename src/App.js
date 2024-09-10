@@ -11,6 +11,7 @@ import ForgotPassword from "./screens/ForgotPassword";
 import EditDetails from "./screens/EditDetails";
 import DeleteAccount from "./screens/DeleteAccount";
 import AppInfo from "./screens/AppInfo";
+import NewWebsite from "./components/NewWebsite";
 import { AuthProvider } from "./AuthContext";
 import './styles.css'
 
@@ -19,7 +20,8 @@ const App = () => {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Map />} />
+          <Route path = "/" element ={<NewWebsite/>}/>
+          {/* <Route path="/" element={<Map />} />
           <Route path="/list" element={<List />} />
           <Route path="/gigDetails/:id" element={<GigDetails />} />
           <Route path="/profile" element={<Profile />} />
@@ -30,7 +32,7 @@ const App = () => {
           <Route path = '/forgot-password' element = {<ForgotPassword/>}/>
           <Route path = '/edit-details' element = {<EditDetails/>}/>
           <Route path = '/delete-account' element = {<DeleteAccount/>}/>
-          <Route path = '/app-info' element = {<AppInfo/>}/>
+          <Route path = '/app-info' element = {<AppInfo/>}/> */}
         </Routes>
       </Router>
     </AuthProvider>
