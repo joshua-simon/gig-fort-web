@@ -12,6 +12,7 @@ import EditDetails from "./screens/EditDetails";
 import DeleteAccount from "./screens/DeleteAccount";
 import AppInfo from "./screens/AppInfo";
 import NewWebsite from "./components/NewWebsite";
+import PrivacyPolicy from "./screens/PrivacyPolicy";
 import { AuthProvider } from "./AuthContext";
 import './styles.css'
 
@@ -21,6 +22,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path = "/" element ={<NewWebsite/>}/>
+          <Route path = "/privacypolicy" element ={<PrivacyPolicy/>}/>
           {/* <Route path="/" element={<Map />} />
           <Route path="/list" element={<List />} />
           <Route path="/gigDetails/:id" element={<GigDetails />} />
